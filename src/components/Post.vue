@@ -1,9 +1,11 @@
 <template>
   <router-link :to="{ name: 'Post', params: { id: postData.id } }">
-    <div class="row blog shadow border p-2 m-2 selectable d-flex">
+    <div
+      class="row blog shadow border p-1 m-1 selectable d-flex bg-dark rounded-3"
+    >
       <div class="col-12">
-        <img class="post-img img-fluid" :src="postData.picture" alt="" />
-        <h3>{{ postData.name }}</h3>
+        <img class="post-img" :src="postData.imgUrl" alt="" />
+        <!-- <h3>{{ postData.name }}</h3> -->
         <p>{{ postData.body }}</p>
       </div>
     </div>
@@ -33,10 +35,11 @@ export default {
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
 }
 .post-img {
-  height: 35vh;
-  width: 100%;
+  height: 10vh;
+  width: 15vh;
   object-fit: contain;
-  object-position: center;
+  object-position: left;
+  border-radius: 15px;
 }
 .post:hover {
   transform: scale(1.05);
