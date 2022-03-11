@@ -5,7 +5,9 @@
     >
       <div class="col-12">
         <img class="post-img" :src="postData.imgUrl" alt="" />
-        <!-- <h3>{{ postData.name }}</h3> -->
+        <h6 class="">
+          <b> {{ postData.creator.name }}</b>
+        </h6>
         <p>{{ postData.body }}</p>
       </div>
     </div>
@@ -33,6 +35,7 @@ export default {
   min-height: 35vh;
   transition: all 0.12s ease;
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+  object-position: right;
 }
 .post-img {
   height: 10vh;

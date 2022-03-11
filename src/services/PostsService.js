@@ -10,6 +10,7 @@ class PostsService {
         AppState.posts = res.data.posts
     }
 
+    //NOTE: Don't forget to add the rest of the methods here
     // async getById(id) {
     //     const res = await api.get
     // }
