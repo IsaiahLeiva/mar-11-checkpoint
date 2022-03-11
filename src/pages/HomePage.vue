@@ -1,16 +1,34 @@
 <template>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-6" v-for="p in posts" :key="p.id">
-        //NOTE: add component here for posts
+      <div class="col-3" v-for="p in posts" :key="p.id">
+        <Post :postData="p" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { computed, onMounted } from "@vue/runtime-core";
+import { logger } from "../utils/Logger";
+import { AppState } from "../AppState";
+import { postsService } from "../services/PostsService";
 export default {
   name: "Home",
+  setup() {
+    onMounted(async () => {
+      try {
+        //NOTE: can't get postsService to migrate
+        await postsService.getAll();
+      } catch (error) {
+        logger.log(error);
+        // Pop.toast(error.message, "error");
+      }
+    });
+    return {
+      posts: computed(() => AppState.posts),
+    };
+  },
 };
 </script>
 

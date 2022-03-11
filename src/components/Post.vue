@@ -2,8 +2,8 @@
   <router-link :to="{ name: 'Post', params: { id: postData.id } }">
     <div class="row blog shadow border p-2 m-2 selectable d-flex">
       <div class="col-9">
-        //NOTE: come back to this later
-        <img src="" alt="" />
+        <img class="post-img" :src="postData.imgUrl" alt="" />
+        <p>{{ postsData.body }}</p>
       </div>
     </div>
   </router-link>
