@@ -1,7 +1,10 @@
 <template>
   <div class="container-fluid">
-    <div class="row">
-      <div class="col-3" v-for="p in posts" :key="p.id">
+    <div class="row justify-content-end">
+      <div class="col-3">
+        <div class="profile-section"></div>
+      </div>
+      <div class="col-9 p-3" v-for="p in posts" :key="p.id">
         <Post :postData="p" />
       </div>
     </div>
@@ -13,6 +16,7 @@ import { computed, onMounted } from "@vue/runtime-core";
 import { logger } from "../utils/Logger";
 import { AppState } from "../AppState";
 import { postsService } from "../services/PostsService";
+
 export default {
   name: "Home",
   setup() {

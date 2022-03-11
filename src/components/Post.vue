@@ -1,9 +1,10 @@
 <template>
   <router-link :to="{ name: 'Post', params: { id: postData.id } }">
     <div class="row blog shadow border p-2 m-2 selectable d-flex">
-      <div class="col-9">
-        <img class="post-img" :src="postData.imgUrl" alt="" />
-        <p>{{ postsData.body }}</p>
+      <div class="col-12">
+        <img class="post-img img-fluid" :src="postData.picture" alt="" />
+        <h3>{{ postData.name }}</h3>
+        <p>{{ postData.body }}</p>
       </div>
     </div>
   </router-link>
