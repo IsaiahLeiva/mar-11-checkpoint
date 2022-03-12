@@ -53,7 +53,7 @@ import { logger } from "../utils/Logger";
 import { AppState } from "../AppState";
 import { Modal } from "bootstrap";
 import { profilesService } from "../services/ProfilesService";
-//NOTE: don't forget to import the service page
+import Pop from "../utils/Pop";
 export default {
   setup() {
     const editable = ref({});
