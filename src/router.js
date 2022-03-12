@@ -31,6 +31,11 @@ const routes = [
     path: '/profile',
     name: 'Profile',
     component: loadPage('ProfilePage')
+  },
+  {
+    path: '/ads',
+    name: 'ads',
+    component: loadPage('AdsPage')
   }
 ]
 
