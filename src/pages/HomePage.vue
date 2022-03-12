@@ -1,12 +1,16 @@
 <template>
   <div class="container-fluid">
     <div class="row justify-content-end">
-      <div class="col-3">
-        <div class="profile-section"></div>
+      <div class="col-3 p-4 mt-5 bg-dark">
+        <div class="profile-section">
+          This is where the profile section will be
+          <ProfilePage />
+        </div>
       </div>
       <div class="col-9 p-3" v-for="p in posts" :key="p.id">
         <Post :postData="p" />
       </div>
+      <!-- <div class="col-3 p-3">This is where an ad will be</div> -->
     </div>
   </div>
 </template>
