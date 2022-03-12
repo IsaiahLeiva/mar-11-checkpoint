@@ -16,17 +16,17 @@ import { computed, onMounted } from "@vue/runtime-core";
 import { logger } from "../utils/Logger";
 import { AppState } from "../AppState";
 import { postsService } from "../services/PostsService";
+import Pop from "../utils/Pop";
 
 export default {
   name: "Home",
   setup() {
     onMounted(async () => {
       try {
-        //NOTE: can't get postsService to migrate
         await postsService.getAll();
       } catch (error) {
         logger.log(error);
-        // Pop.toast(error.message, "error");
+        Pop.toast(error.message, "error");
       }
     });
     return {
