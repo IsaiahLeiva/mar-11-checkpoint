@@ -41,15 +41,39 @@
           placeholder="email..."
         />
       </div>
+      <button class="btn btn-outline-warning">Edit Profile</button>
     </div>
   </form>
 </template>
 
 
 <script>
+import { ref } from "@vue/reactivity";
+import { logger } from "../utils/Logger";
+import { AppState } from "../AppState";
+import { Modal } from "bootstrap";
+import { profilesService } from "../services/ProfilesService";
+//NOTE: don't forget to import the service page
 export default {
   setup() {
-    return {};
+    const editable = ref({});
+    return {
+      editable,
+      async editProfile() {
+        try {
+          await profilesService.editProfile(
+            AppState.profile.id,
+            editable.value
+          );
+          Modal.getOrCreateInstance(
+            document.getElementById("profile-modal")
+          ).hide();
+        } catch (error) {
+          logger.error(error);
+          Pop.toast(error.message, "error");
+        }
+      },
+    };
   },
 };
 </script>
