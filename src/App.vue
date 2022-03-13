@@ -7,7 +7,7 @@
   </main>
   <footer>
     <div class="bg-dark text-light text-center p-4">
-      Made with mdi mdiLambda by Black Mesa
+      Made with <i class="mdi mdi-lambda"></i> by Black Mesa
     </div>
   </footer>
 </template>

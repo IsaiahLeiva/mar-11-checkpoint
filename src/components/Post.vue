@@ -1,17 +1,22 @@
 <template>
-  <router-link :to="{ name: 'Post', params: { id: postData.id } }">
-    <div
-      class="row blog shadow border p-1 m-1 selectable d-flex bg-dark rounded-3"
-    >
-      <div class="col-12">
-        <img class="post-img" :src="postData.imgUrl" alt="" />
-        <h6 class="">
-          <b> {{ postData.creator.name }}</b>
-        </h6>
-        <p>{{ postData.body }}</p>
-      </div>
+  <div class="row blog shadow border p-1 m-1 d-flex bg-dark rounded-3">
+    <div class="col-12">
+      <router-link
+        :to="{ name: 'Profile', params: { id: postData.creatorId } }"
+      >
+        <img
+          class="post-img selectable"
+          :src="postData.creator.picture"
+          alt=""
+        />
+      </router-link>
+      <h6 class="">
+        <b> {{ postData.creator.name }}</b>
+      </h6>
+      <p>{{ postData.body }}</p>
+      <img class="img-fluid" :src="postData.imgUrl" alt="" />
     </div>
-  </router-link>
+  </div>
 </template>
 
 
