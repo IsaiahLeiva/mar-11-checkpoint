@@ -43,7 +43,7 @@
 
 
 <script>
-import { computed, onMounted } from "@vue/runtime-core";
+import { computed, onMounted, watchEffect } from "@vue/runtime-core";
 import { useRoute } from "vue-router";
 import { AppState } from "../AppState";
 import { postsService } from "../services/PostsService";
@@ -53,7 +53,7 @@ import { profilesService } from "../services/ProfilesService";
 export default {
   setup() {
     const route = useRoute();
-    onMounted(async () => {
+    watchEffect(async () => {
       try {
         AppState.activePost = {};
         await profilesService.getProfile(route.params.id);
