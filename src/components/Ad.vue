@@ -1,7 +1,8 @@
 <template>
   <div class="container-fluid">
     <div class="col-12">
-      <img class="" :src="adData.ads" alt="" />
+      <!-- //NOTE: my code really does not like the router-link trying to create ads -->
+      <!-- <router-link :to="{ name: 'ad', params: { id: adData.ad}}"> -->
     </div>
   </div>
 </template>

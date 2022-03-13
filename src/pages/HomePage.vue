@@ -8,10 +8,12 @@
             <ProfilePage />
           </div>
         </div>
-        <div class="row p-5"><Ads /></div>
-        <div class="row p-5">Advertisement #2</div>
+        <div class="row p-5">Advertisement #1 goes here<Ads /></div>
+        <div class="row p-5">Advertisement #2 goes here</div>
       </div>
       <div class="col-md-8 mb-2 p-3">
+        <!-- //NOTE - Below I'm only able to the see the 'Previous Posts' button but
+        even then it's not available. -->
         <button
           @click="changePage(nextPage)"
           class="btn btn-outline-danger me-2"

@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid">
     <div class="row img-fluid">
-      <div>{{ ads }}</div>
+      <div>{{ adData.ad }}</div>
     </div>
   </div>
 </template>
