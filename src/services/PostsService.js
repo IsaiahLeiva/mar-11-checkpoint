@@ -8,6 +8,8 @@ class PostsService {
         const res = await api.get('api/posts', { params: query })
         logger.log('[getAll', res.data.posts)
         AppState.posts = res.data.posts
+        AppState.nextPage = res.data.next
+        AppState.olderPosts = res.data.older
     }
 
     async getById(id) {

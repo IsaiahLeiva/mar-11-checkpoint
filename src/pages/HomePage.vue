@@ -1,13 +1,17 @@
 <template>
   <div class="container-fluid">
     <div class="row justify-content-end">
-      <div class="col-md-4 p-4 mt-5 bg-dark">
-        <div class="profile-section">
-          This is where the profile section will be
-          <ProfilePage />
+      <div class="col-4 p-4 mt-5 bg-dark">
+        <div class="row p-5">
+          <div class="profile-section">
+            This is where the profile section will be
+            <ProfilePage />
+          </div>
         </div>
+        <div class="row p-5">Advertisement #1</div>
+        <div class="row p-5">Advertisement #2</div>
       </div>
-      <div class="col-md-8 p-3" v-for="p in posts" :key="p.id">
+      <div class="col-md-8 mb-2 p-3">
         <button
           @click="changePage(nextPage)"
           class="btn btn-outline-danger me-2"
@@ -23,7 +27,7 @@
         >
           Next Posts
         </button>
-        <div>
+        <div v-for="p in posts" :key="p.id">
           <Post :postData="p" />
         </div>
       </div>
