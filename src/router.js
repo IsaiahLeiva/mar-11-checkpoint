@@ -30,7 +30,8 @@ const routes = [
   {
     path: '/profile',
     name: 'Profile',
-    component: loadPage('ProfilePage')
+    component: loadPage('ProfilePage'),
+    // beforeEnter: authGuard
   },
   {
     path: '/ads',
