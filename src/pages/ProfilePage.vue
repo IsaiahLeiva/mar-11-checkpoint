@@ -9,6 +9,9 @@
           alt=""
         />
         <p>{{ profile.email }}</p>
+        <p>{{ profile.bio }}</p>
+        <p><i class="mdi mdi-github"></i>{{ profile.github }}</p>
+        <p><i class="mdi mdi-linkedin"></i>{{ profile.linkedin }}</p>
         <button
           v-if="profile.id == account.id"
           data-bs-toggle="modal"
