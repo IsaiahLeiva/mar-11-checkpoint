@@ -31,6 +31,20 @@
           </router-link>
         </li>
       </ul>
+      <!-- //NOTE: search bar -->
+      <div class="topnav">
+        <div class="search-container">
+          <form action="/action_page.php">
+            <input
+              type="text"
+              v-model="search"
+              placeholder="Search Posts.."
+              name="search"
+            />
+            <!-- <button type="submit"><i class="fa fa-search"></i></button> -->
+          </form>
+        </div>
+      </div>
       <span class="navbar-text">
         <button
           class="
@@ -93,6 +107,7 @@
 import { AuthService } from "../services/AuthService";
 import { AppState } from "../AppState";
 import { computed } from "vue";
+// import func from "vue-editor-bridge";
 export default {
   setup() {
     return {
@@ -104,6 +119,19 @@ export default {
         AuthService.logout({ returnTo: window.location.origin });
       },
     };
+  },
+  data() {
+    return {
+      posts: [],
+      search: "",
+    };
+  },
+  computed: {
+    filteredPosts: function () {
+      return this.posts.filter((post) => {
+        return post.title.match(this.search);
+      });
+    },
   },
 };
 </script>
