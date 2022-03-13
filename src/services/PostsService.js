@@ -16,6 +16,14 @@ class PostsService {
         AppState.activePost = res.data
     }
 
+    async changePage(page) {
+        const res = await api.get(page)
+        logger.log(res.data.posts)
+        AppState.posts = res.data.posts
+        AppState.nextPage = res.data.next
+        AppState.olderPosts = res.data.older
+    }
+
     async createPost(data) {
         const res = await api.post('api/posts', data)
         logger.log('[createPost]', res.data)

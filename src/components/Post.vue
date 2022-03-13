@@ -15,7 +15,7 @@
       </h6>
       <p>{{ postData.body }}</p>
       <img class="img-fluid" :src="postData.imgUrl" alt="" />
-      <p>Created At:{{ postData.creator.createdAt }}</p>
+      <p>Created At: {{ postData.creator.createdAt }}</p>
     </div>
   </div>
 </template>

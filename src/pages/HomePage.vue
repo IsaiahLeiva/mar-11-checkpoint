@@ -1,14 +1,31 @@
 <template>
   <div class="container-fluid">
     <div class="row justify-content-end">
-      <div class="col-3 p-4 mt-5 bg-dark">
+      <div class="col-md-4 p-4 mt-5 bg-dark">
         <div class="profile-section">
           This is where the profile section will be
           <ProfilePage />
         </div>
       </div>
-      <div class="col-9 p-3" v-for="p in posts" :key="p.id">
-        <Post :postData="p" />
+      <div class="col-md-8 p-3" v-for="p in posts" :key="p.id">
+        <button
+          @click="changePage(nextPage)"
+          class="btn btn-outline-danger me-2"
+          :class="{ disabled: !olderPosts }"
+          :disabled="!olderPosts"
+        >
+          Previous Posts
+        </button>
+        <button
+          v-if="nextPage"
+          @click="changePage(nextPage)"
+          class="btn btn-outline-danger"
+        >
+          Next Posts
+        </button>
+        <div>
+          <Post :postData="p" />
+        </div>
       </div>
       <!-- <div class="col-3 p-3">This is where an ad will be</div> -->
     </div>
