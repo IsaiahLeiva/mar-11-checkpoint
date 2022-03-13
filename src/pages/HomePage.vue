@@ -8,7 +8,7 @@
             <ProfilePage />
           </div>
         </div>
-        <div class="row p-5">Advertisement #1</div>
+        <div class="row p-5"><Ads /></div>
         <div class="row p-5">Advertisement #2</div>
       </div>
       <div class="col-md-8 mb-2 p-3">
