@@ -34,7 +34,7 @@
       <!-- //NOTE: search bar -->
       <div class="topnav">
         <div class="search-container">
-          <form action="/action_page.php">
+          <form @submit.prevent="handleSearch">
             <input
               type="text"
               v-model="search"
@@ -131,6 +131,16 @@ export default {
       return this.posts.filter((post) => {
         return post.title.match(this.search);
       });
+    },
+  },
+  methods: {
+    handleSearch() {
+      this.posts.filter((singlePost) => {
+        if (singlePost.name === this.search) {
+          console.log(singlePost);
+        }
+      });
+      // alert(this.search);
     },
   },
 };

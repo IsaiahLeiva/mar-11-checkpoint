@@ -16,9 +16,9 @@
           v-if="profile.id == account.id"
           data-bs-toggle="modal"
           data-bs-target="#profile-modal"
-          class="btn btn-outline-warning"
+          class="btn btn-outline-danger"
         >
-          Edit Profile
+          <i class="mdi mdi-pencil"></i> Edit Profile
         </button>
       </div>
     </div>

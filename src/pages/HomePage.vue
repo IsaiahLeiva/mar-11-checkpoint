@@ -8,12 +8,12 @@
             <ProfilePage />
           </div>
         </div>
-        <div class="row p-5">Advertisement #1 goes here<Ads /></div>
+        <div class="row p-5">
+          <Ad />
+        </div>
         <div class="row p-5">Advertisement #2 goes here</div>
       </div>
       <div class="col-md-8 mb-2 p-3">
-        <!-- //NOTE - Below I'm only able to the see the 'Previous Posts' button but
-        even then it's not available. -->
         <button
           @click="changePage(nextPage)"
           class="btn btn-outline-danger me-2"
@@ -43,10 +43,12 @@ import { computed, onMounted } from "@vue/runtime-core";
 import { logger } from "../utils/Logger";
 import { AppState } from "../AppState";
 import { postsService } from "../services/PostsService";
+import Ad from "../components/Ad.vue";
 import Pop from "../utils/Pop";
 
 export default {
   name: "Home",
+  components: { Ad },
   setup() {
     onMounted(async () => {
       try {
@@ -56,8 +58,10 @@ export default {
         Pop.toast(error.message, "error");
       }
     });
+    //NOTE: create function for next page
     return {
       posts: computed(() => AppState.posts),
+      nextPage: true,
     };
   },
 };
