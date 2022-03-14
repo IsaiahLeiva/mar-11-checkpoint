@@ -16,7 +16,8 @@
       <p>{{ postData.body }}</p>
       <img class="img-fluid" :src="postData.imgUrl" alt="" />
       <p>Created At: {{ postData.creator.createdAt }}</p>
-      <p>Likes: {{ postData.likes }}</p>
+      <!-- NOTE how do you show how many items are in an array? What is the length?????-->
+      <p>Likes: {{ postData.likes.length }}</p>
     </div>
   </div>
 </template>

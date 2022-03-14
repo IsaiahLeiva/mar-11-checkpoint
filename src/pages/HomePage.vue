@@ -9,24 +9,20 @@
           </div>
         </div>
         <div class="row p-5">
+          <!-- NOTE pass down an ad as prop right here. You passed down a prop to your post component, do the smae thing here -->
           <Ad />
         </div>
         <div class="row p-5">Advertisement #2 goes here</div>
       </div>
       <div class="col-md-8 mb-2 p-3">
         <button
-          @click="changePage(nextPage)"
+          @click="changePage(previousPage)"
           class="btn btn-outline-danger me-2"
-          :class="{ disabled: !olderPosts }"
-          :disabled="!olderPosts"
+          v-if="previousPage"
         >
           Previous Posts
         </button>
-        <button
-          v-if="nextPage"
-          @click="changePage(nextPage)"
-          class="btn btn-outline-danger"
-        >
+        <button @click="changePage(nextPage)" class="btn btn-outline-danger">
           Next Posts
         </button>
         <div v-for="p in posts" :key="p.id">
@@ -45,6 +41,7 @@ import { AppState } from "../AppState";
 import { postsService } from "../services/PostsService";
 import Ad from "../components/Ad.vue";
 import Pop from "../utils/Pop";
+import { adsService } from "../services/AdsService";
 
 export default {
   name: "Home",
@@ -53,6 +50,7 @@ export default {
     onMounted(async () => {
       try {
         await postsService.getAll();
+        await adsService.getAll();
       } catch (error) {
         logger.log(error);
         Pop.toast(error.message, "error");
@@ -60,6 +58,7 @@ export default {
       }
     });
     return {
+      // NOTE bring in your ads with a computed
       posts: computed(() => AppState.posts),
       //NOTE: Uncomment when ready
       nextPage: computed(() => AppState.nextPage),

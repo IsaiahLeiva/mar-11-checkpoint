@@ -6,8 +6,8 @@ import { api } from "./AxiosService"
 class AdsService {
     async getAll(query = {}) {
         const res = await api.get('api/ads', { params: query })
-        logger.log('[getAll', res.data.ads)
-        AppState.ads = res.data.ads
+        logger.log('[getAllads', res.data)
+        AppState.ads = res.data
     }
 
 }

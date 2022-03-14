@@ -6,10 +6,11 @@ import { api } from "./AxiosService"
 class PostsService {
     async getAll(query = {}) {
         const res = await api.get('api/posts', { params: query })
-        logger.log('[getAll', res.data.posts)
+        logger.log('[getAll', res.data)
         AppState.posts = res.data.posts
-        AppState.nextPage = res.data.next
-        AppState.olderPosts = res.data.older
+        // NOTE check your Vue tools whenever you press this button, and see what we're getting these set to in our AppState
+        AppState.nextPage = res.data.older
+        AppState.olderPosts = res.data.newer
     }
 
     async getById(id) {
@@ -20,8 +21,9 @@ class PostsService {
 
     async changePage(page) {
         const res = await api.get(page)
-        logger.log(res.data.posts)
+        logger.log(res.data)
         AppState.posts = res.data.posts
+        // NOTE these need to match what's on lines 12 and 13
         AppState.nextPage = res.data.next
         AppState.olderPosts = res.data.older
     }
