@@ -56,12 +56,23 @@ export default {
       } catch (error) {
         logger.log(error);
         Pop.toast(error.message, "error");
+        //ANCHOR: still no clue why my ads aren't showing up
       }
     });
-    //NOTE: create function for next page
     return {
       posts: computed(() => AppState.posts),
-      nextPage: true,
+      //NOTE: Uncomment when ready
+      nextPage: computed(() => AppState.nextPage),
+      previousPage: computed(() => AppState.olderPosts),
+      //ANCHOR: now my next page button disappeared
+      async changePage(page) {
+        try {
+          await postsService.changePage(page);
+        } catch (error) {
+          logger.error(error);
+          Pop.toast(error.message, "error");
+        }
+      },
     };
   },
 };
