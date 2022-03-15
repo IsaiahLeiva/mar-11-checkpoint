@@ -70,7 +70,7 @@ export default {
         await postsService.getAll({ creatorId: route.params.id });
       } catch (error) {
         logger.error(error.message);
-        Pop.toast(error.message, "error");
+        // Pop.toast(error.message, "error");
       }
     });
     return {

@@ -19,6 +19,7 @@
       aria-label="Toggle navigation"
     >
       <span class="navbar-toggler-icon" />
+      <!-- //NOTE create post button -->
     </button>
     <b
       title="Create Post"
@@ -31,6 +32,7 @@
         align-items-center
         justify-content-center
       "
+      v-if="account.id == profile.id"
       data-bs-toggle="modal"
       data-bs-target="#form-modal"
     >
