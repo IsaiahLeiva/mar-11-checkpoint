@@ -1,6 +1,9 @@
 <template>
   <div class="container-fluid">
     <div class="row shadow rounded m-3 bg-white">
+      <div class="row p-5" v-for="a in ads" :key="a.title">
+        <Ad :adData="a" />
+      </div>
       <div class="col-12 about text-center p-2">
         <div class="bg-light p-3">
           <h1>{{ profile.name }}</h1>
@@ -74,6 +77,7 @@ export default {
       profile: computed(() => AppState.profile),
       posts: computed(() => AppState.posts),
       account: computed(() => AppState.account),
+      ads: computed(() => AppState.ads),
     };
   },
 };

@@ -7,6 +7,7 @@
             <ProfilePage />
           </div>
         </div>
+        //NOTE advertisement
         <div class="row p-5" v-for="a in ads" :key="a.title">
           <Ad :adData="a" />
         </div>

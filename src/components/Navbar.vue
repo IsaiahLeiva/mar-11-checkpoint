@@ -20,6 +20,22 @@
     >
       <span class="navbar-toggler-icon" />
     </button>
+    <b
+      title="Create Post"
+      class="
+        create-btn
+        btn btn-success
+        rounded-pill
+        shadow
+        d-flex
+        align-items-center
+        justify-content-center
+      "
+      data-bs-toggle="modal"
+      data-bs-target="#form-modal"
+    >
+      <i class="mdi mdi-plus">Create Post</i>
+    </b>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto">
         <li>
