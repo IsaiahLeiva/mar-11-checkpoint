@@ -8,11 +8,10 @@
             <ProfilePage />
           </div>
         </div>
-        <div class="row p-5">
-          <!-- NOTE pass down an ad as prop right here. You passed down a prop to your post component, do the smae thing here -->
-          <Ad />
+        <div class="row p-5" v-for="a in ads" :key="a.title">
+          <Ad :adData="a" />
         </div>
-        <div class="row p-5">Advertisement #2 goes here</div>
+        <div class="row p-5"></div>
       </div>
       <div class="col-md-8 mb-2 p-3">
         <button
@@ -53,8 +52,7 @@ export default {
         await adsService.getAll();
       } catch (error) {
         logger.log(error);
-        Pop.toast(error.message, "error");
-        //ANCHOR: still no clue why my ads aren't showing up
+        // Pop.toast(error.message, "error");
       }
     });
     return {
@@ -63,7 +61,7 @@ export default {
       //NOTE: Uncomment when ready
       nextPage: computed(() => AppState.nextPage),
       previousPage: computed(() => AppState.olderPosts),
-      //ANCHOR: now my next page button disappeared
+      ads: computed(() => AppState.ads),
       async changePage(page) {
         try {
           await postsService.changePage(page);

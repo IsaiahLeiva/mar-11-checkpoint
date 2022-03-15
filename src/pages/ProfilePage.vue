@@ -4,14 +4,17 @@
       <div class="col-12 about text-center p-2">
         <h1>{{ profile.name }}</h1>
         <img
-          class="rounded img-fluid profile-img"
-          :src="profile.coverImg"
-          alt=""
+          class="rounded profile-img"
+          :src="profile.picture"
+          alt="profile-picture"
         />
         <p>{{ profile.email }}</p>
         <p>{{ profile.bio }}</p>
-        <p><i class="mdi mdi-github"></i>{{ profile.github }}</p>
-        <p><i class="mdi mdi-linkedin"></i>{{ profile.linkedin }}</p>
+        <p><i class="mdi mdi-github">Github: </i>{{ profile.github }}</p>
+        <p><i class="mdi mdi-linkedin">LinkedIn: </i>{{ profile.linkedin }}</p>
+        <p>Current Class: {{ profile.class }}</p>
+        <p>Graduated? {{ profile.graduated }}</p>
+        <img class="bg-image" :src="profile.coverImg" alt="" />
         <button
           v-if="profile.id == account.id"
           data-bs-toggle="modal"

@@ -37,6 +37,14 @@
     <div v-else class="col-12 d-flex justify-content-end">
       <button class="btn btn-outline-primary">Create</button>
     </div>
+    <button
+      v-if="!postData.id"
+      @click="createPost"
+      type="button"
+      class="btn btn-success text-dark text-uppercase selectable"
+    >
+      <b> Create Post </b>
+    </button>
   </form>
 </template>
 
