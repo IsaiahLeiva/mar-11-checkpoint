@@ -16,8 +16,10 @@
       <p>{{ postData.body }}</p>
       <img class="img-fluid" :src="postData.imgUrl" alt="" />
       <p>Created At: {{ postData.creator.createdAt }}</p>
-      <!-- NOTE how do you show how many items are in an array? What is the length?????-->
       <p><i class="mdi mdi-heart"></i> Likes: {{ postData.likes.length }}</p>
+      <button class="bg-danger" v-if="account.id == post.creatorId">
+        Delete Post
+      </button>
     </div>
   </div>
 </template>

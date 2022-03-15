@@ -59,6 +59,7 @@
               placeholder="Search Posts.."
               name="search"
             />
+            <!-- <Search /> -->
             <!-- <button type="submit"><i class="fa fa-search"></i></button> -->
           </form>
         </div>
