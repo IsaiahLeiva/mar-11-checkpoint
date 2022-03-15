@@ -1,11 +1,7 @@
 <template>
   <div class="container-fluid">
     <form @submit.prevent="editProfile">
-      <div class="bg-dark col-3 p-5">
-        <div v-for="a in ads" :key="a.title">
-          <Ad :adData="a" />
-        </div>
-      </div>
+      <div class="bg-dark col-3 p-5"></div>
       <div class="raw profile-form col-9 mb-3">
         <div id="name-field">
           <input

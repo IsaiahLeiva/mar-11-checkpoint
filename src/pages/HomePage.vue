@@ -4,7 +4,6 @@
       <div class="col-4 p-4 mt-5 bg-dark">
         <div class="row p-5">
           <div class="profile-section">
-            This is where the profile section will be
             <ProfilePage />
           </div>
         </div>

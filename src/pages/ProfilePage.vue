@@ -2,18 +2,22 @@
   <div class="container-fluid">
     <div class="row shadow rounded m-3 bg-white">
       <div class="col-12 about text-center p-2">
-        <h1>{{ profile.name }}</h1>
-        <img
-          class="rounded profile-img"
-          :src="profile.picture"
-          alt="profile-picture"
-        />
-        <p>{{ profile.email }}</p>
-        <p>{{ profile.bio }}</p>
-        <p><i class="mdi mdi-github">Github: </i>{{ profile.github }}</p>
-        <p><i class="mdi mdi-linkedin">LinkedIn: </i>{{ profile.linkedin }}</p>
-        <p>Current Class: {{ profile.class }}</p>
-        <p>Graduated? {{ profile.graduated }}</p>
+        <div class="bg-light p-3">
+          <h1>{{ profile.name }}</h1>
+          <img
+            class="rounded profile-img"
+            :src="profile.picture"
+            alt="profile-picture"
+          />
+          <p>{{ profile.email }}</p>
+          <p>{{ profile.bio }}</p>
+          <p><i class="mdi mdi-github">Github: </i>{{ profile.github }}</p>
+          <p>
+            <i class="mdi mdi-linkedin">LinkedIn: </i>{{ profile.linkedin }}
+          </p>
+          <p>Current Class: {{ profile.class }}</p>
+          <p>Graduated? {{ profile.graduated }}</p>
+        </div>
         <img class="bg-image" :src="profile.coverImg" alt="" />
         <button
           v-if="profile.id == account.id"
